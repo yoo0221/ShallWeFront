@@ -1,0 +1,222 @@
+{% extends 'base.html' %} {% load static %} {% block mainbody %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> 약속내역</h4>
+    <div class="col-lg-6 mb-4 order-0">
+        <div class="card accordion-item">
+            <div class="row row-cols-1">
+                <div class="col-md-10 mx-auto  mt-3 text-center">
+                    <span>
+                        예정 약속 2건
+                    </span>
+                </div>
+                <div class="col-md-10 mx-auto my-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                        src="{% static 'assets/img/USA.jpg' %}"
+                                        class="rounded"
+                                    />
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn p-0"
+                                        type="button"
+                                        id="cardOpt3"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                        <!-- 위치를 임시로 테마셀렠으로 해놓음 나중에 채팅으로 연결 -->
+                                        <a class="dropdown-item" href="{% url 'themaselect' %}">채팅가기</a>
+                                        <a 
+                                            class="dropdown-item"
+                                            type="button"
+                                            aria-label="Close"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#수정"
+                                        >수정하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="card-title mb-2">Tommy</h3>
+                            <span class="fw-semibold d-block mb-1">카페</span>
+                            <small class="text-success fw-semibold">2022/08/15 오후 3시</small>
+                            <a
+                                class="btn btn-outline-secondary"
+                                data-bs-toggle="collapse"
+                                href="#회화1"
+                                role="button"
+                                style="float: right;"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                            +
+                            </a>
+                            <div class="collapse" id="회화1">
+                                <span>
+                                    내 생애 가장 부끄러었던 일은?<br>
+                                    나를 행복하게 만드는 작은 습관이 있다면?<br>
+                                    슬픈 감정은 어떻게 해소하나요?<br>
+                                    웃다가 울어본 적 있나요?
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 mx-auto text-center ">
+                    <a href="{% url 'meet' %}">
+                    <div class="card "  style="height: 60px">
+                        <div class="card-body ">
+                            <p class="card-title text-primary">
+                                테마보기
+                            </p>
+                        </div>
+                    </div>
+                    </a>
+                </div>   
+
+                <div class="col-md-10 mx-auto my-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                                <div class="avatar flex-shrink-0">
+                                    <img
+                                        src="{% static 'assets/img/canada.png' %}"
+                                        class="rounded"
+                                    />
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn p-0"
+                                        type="button"
+                                        id="cardOpt3"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                        <!-- 위치를 임시로 테마셀렠으로 해놓음 나중에 채팅으로 연결 -->
+                                        <a class="dropdown-item" href="{% url 'themaselect' %}">채팅가기</a>
+                                        <a 
+                                            class="dropdown-item"
+                                            type="button"
+                                            aria-label="Close"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#수정"
+                                        >수정하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="card-title mb-2">Lily</h3>
+                            <span class="fw-semibold d-block mb-1">카페</span>
+                            <small class="text-success fw-semibold">2022/08/03 오후 2시</small>
+                            <a
+                                class="btn btn-outline-secondary"
+                                data-bs-toggle="collapse"
+                                href="#회화2"
+                                role="button"
+                                style="float: right;"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                            +
+                            </a>
+                            <div class="collapse" id="회화2">
+                                <span>
+                                    내 생애 가장 부끄러었던 일은?<br>
+                                    나를 행복하게 만드는 작은 습관이 있다면?<br>
+                                    슬픈 감정은 어떻게 해소하나요?<br>
+                                    웃다가 울어본 적 있나요?
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 mx-auto text-center ">
+                    <a href="{% url 'meet' %}">
+                    <div class="card "  style="height: 60px">
+                        <div class="card-body ">
+                            <p class="card-title text-primary">
+                                테마보기
+                            </p>
+                        </div>
+                    </div>
+                    </a>
+                </div>     
+                
+            <div class="col-md-10 mx-auto mt-3 text-center">
+                <span>
+                    지난 약속 0건
+                </span>
+            </div>
+
+            <!-- 메인페이지 url를 몰라서 themaselect로 해놨어... -->
+            <div class="d-grid gap-2 col-lg-6 mx-auto mt-3 mb-3">
+                <button type="button" class="btn btn-primary" onclick="location.href='{% url 'home' %}'">메인으로 이동</button>
+            </div>  
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="수정" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">약속 수정하기</h5>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+            ></button>
+            </div>
+            <form>
+                <div class="card-body">
+                <h6 class="card-title"><strong>장소</strong></h6>
+                    <div class="thema-select-place-group">
+                        <label class="radio-btn col">
+                            <input type="radio" name="thema-select-place" value="restaurant" />
+                                <span>식당</span>
+                        </label>
+                        <label class="radio-btn col">
+                            <input type="radio" name="thema-select-place" value="cafe" />
+                                <span>카페</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
+                <label>
+                    <input type="text" placeholder="나와 메이트가 이번에 갈 장소는?">
+                </label>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title"><strong>날짜/시간</strong></h6>
+                    <div class="row justify-content-md-center py-4">
+                        <input
+                            type="datetime-local"
+                            class="col-md-auto"
+                            id="birth"
+                            name="birth"
+                            autofocus
+                        />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    취소
+                    </button>
+                    <button type="button" class="btn btn-primary">수정</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainbody %}
+<!-- Content -->
+<div class="container-xxl flex-grow-1 container-p-y">
+  <!-- <h4 class="fw-bold py-3 mb-2"> 프로필 등록</h4> -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <ul class="nav nav-pills flex-column flex-md-row mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> 계정</a>
+        </li>
+      </ul> -->
+      <div class="card mb-4">
+        <h5 class="card-header">프로필 등록</h5>
+        <!-- Account -->
+        <form id="formAccountSettings" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <input type="text" id=user name="user" hidden value="{{user.username}}"> -->
+        <div class="card-body align-items-sm-center">
+          <div class="d-flex align-items-start align-items-sm-center gap-4">
+            <div>
+            <label for="photo_img" class="avatar" tabindex="0">
+                {% if user.userprofile.get_photo_url %}
+                <div class="avatar">
+                      <img
+                        src="{{ user.userprofile.get_photo_url }}"
+                        alt
+                        class="w-px-40 h-auto rounded-circle"
+                      />
+                    </div>
+                {% else %}
+                    <div class="avatar">
+                      <img
+                        src="{% static 'assets/img/photo_add.png' %}"
+                        alt
+                        class="w-px-40 h-auto rounded-circle"
+                      />
+                    </div>
+                {% endif %}
+              </label>
+            {{form.photo}}
+          </div> 
+           
+            <div class="button-wrapper">
+              <label for="photo_img" class="btn btn-primary me-2 mb-4" tabindex="0">
+                <span class="d-none d-sm-block">사진업로드</span>
+                <i class="bx bx-upload d-block d-sm-none"></i>
+                <!-- <input
+                  type="file"
+                  id="photo_img"
+                  name="photo_img"
+                  class="account-file-input"
+                  hidden
+                  accept="image/png, image/jpeg"
+                /> -->
+              </label>
+              {{form.photo}}
+              <!-- <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+                <i class="bx bx-reset d-block d-sm-none"></i>
+                <span class="d-none d-sm-block">리셋</span>
+              </button> -->
+
+              <p class="text-muted mb-0">파일 형식 JPG, 또는 PNG</p>
+            </div>
+          </div>
+          <div>
+            {{user.name}}
+            <br>
+            {{user.nationality}}
+            <br>
+            {{user.mother_tongue}}
+          </div>
+        </div>
+        <hr class="my-0" />
+        <div class="card-body">
+              <div class="row">
+              <!-- {% if user.introduction %}
+              <div class="mb-3 col-md-6">
+                <label for="skill" class="form-label">언어 수준</label>
+                {{form.skill}}
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="skill" class="form-label">언어 수준</label>
+                {{form.skill}}
+              </div>
+              <!-- {% endif %} -->
+
+              <!-- {% if user.introduction %}
+              <div class="mb-3 col-md-6">
+                <label for="introduction" class="form-label">본인 소개</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="introduction"
+                  name="introduction"
+                  value="{{user.introduction}}"
+                  placeholder="나를 소개하는 한 줄"
+                />
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="introduction" class="form-label">본인 소개</label>
+                {{form.introduction}}
+              </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.introduction %}
+              <div class="mb-3 col-md-6">
+                <label for="introduction" class="form-label">관련 해시태그</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="interesting_keyword"
+                  name="interesting_keyword"
+                  value="{{user.introduction}}"
+                  placeholder="#MBTI #강아지 #먹방 #여행"
+                />
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="interesting_keyword" class="form-label">관련 해시태그</label>
+                {{form.interesting_keyword}}
+              </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.like_place %}
+              <div class="mb-3 col-md-6">
+                <label for="likeplace" class="form-label">이런 장소가 좋아요</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="likeplace"
+                  name="likeplace"
+                  value="{{user.like_place}}"
+                  placeholder="카페가 특히 편해요, 딱히 없어요 등등"
+                />
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="likeplace" class="form-label">이런 장소가 좋아요</label>
+                {{form.like_place}}
+              </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.unlike_place %}
+              <div class="mb-3 col-md-6">
+                <label for="unlikeplace" class="form-label">이런 장소는 곤란해요</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="unlikeplace"
+                  name="unlikeplace"
+                  value="{{user.unlike_place}}"
+                  placeholder="이런 곳만 아니면 괜찮아요"
+                />
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="unlikeplace" class="form-label">이런 장소는 곤란해요</label>
+                {{form.unlike_place}}
+              </div>
+              <!-- {% endif %} -->
+            </div>
+            <div class="mt-2">
+              <button type="submit" class="btn btn-primary me-2">변경사항 저장</button>
+              <a href="javascript:history.back()"><button type="" class="btn btn-outline-secondary">취소</button></a>
+            </div>
+            </div>
+          </form>
+        </div>
+        <!-- /Account -->
+      </div>
+      <div class="card">
+        <h5 class="card-header">계정 삭제</h5>
+        <div class="card-body">
+          <div class="mb-3 col-12 mb-0">
+            <div class="alert alert-warning">
+              <h6 class="alert-heading fw-bold mb-1">정말로 계정을 삭제하시겠습니까?</h6>
+              <p class="mb-0">한번 삭제하게 되면 되돌릴 수 없습니다. 그래도 진행하겠습니까?</p>
+            </div>
+          </div>
+          <form id="formAccountDeactivation" onsubmit="return false">
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="accountActivation"
+                id="accountActivation"
+              />
+              <label class="form-check-label" for="accountActivation"
+                >위의 사항을 확인하였습니다.</label
+              >
+            </div>
+            <button type="submit" class="btn btn-danger deactivate-account">계정 삭제</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Content -->
+{% endblock %}
+
