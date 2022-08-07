@@ -1,0 +1,76 @@
+.header {
+    padding: 1rem;
+    color: #FFF;
+}
+
+.card {
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    height: 600px;
+}
+
+.profileImg {
+    width: 7rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    /* border-radius: 50%;
+    box-shadow: 0px 2px 5px #CCC; */
+}
+
+.name {
+    font-weight: bolder;
+    margin-bottom: 0.1rem;
+}
+
+.iconWrapper {
+    color: #1C3BD5;
+    overflow: hidden;
+}
+
+.iconWrapper-left {
+    padding-left: 1rem;
+    text-align: left;
+    float: left;
+}
+
+.iconWrapper-left > span {
+    font-size: 12px;
+}
+
+.iconWrapper-right {
+    text-align: right;
+    padding-right: 1rem;
+    float: right;
+}
+
+.orderBox {
+    color: #666;
+    border-bottom: 2px solid #CCC;
+    text-align: left;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title, .description {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.title {
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.description {
+    padding-bottom: 0.25rem;
+}
+
+.profileOrder {
+    width: 0.75rem;
+}
