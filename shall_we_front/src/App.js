@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./pages/profile";
 import Mymate from "./pages/mymate";
 import Chatlist from "./pages/chatlist";
+import DetailProfile from "./pages/detailProfile"
 import Topnav from "./components/base/topnav";
 import BottomNav from "./components/base/bottomnav";
 
@@ -50,6 +51,14 @@ function App() {
           element={
             <>
               <Topnav /> <BottomNav /> <Mymate />
+            </>
+          }
+        />
+        <Route
+          path="/detailProfile"
+          element={
+            <>
+              <DetailProfile />
             </>
           }
         />

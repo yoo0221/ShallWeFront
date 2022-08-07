@@ -7,6 +7,7 @@ import BottomNav from "./components/base/bottomnav";
 import Menu from "./components/base/menu";
 import Topnav from "./components/base/topnav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
