@@ -12,9 +12,37 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
 
+
+function OrderBox(props) {
+    return (
+        <>
+        {props.orders.map((order, index)=> (
+            <div className='orderBox'>
+                <div className='orderTitle'>
+                    <img
+                        src='/assets/img/profile_order.png'
+                        className='profileOrder'/>
+                    <span> {order.title}</span>
+                </div>
+                <div className='orderDes'>
+                    <span> {order.body}</span>
+                </div>
+            </div>
+        ))}
+        </>
+    );
+}
+
 function detailProfile() {
     // const [like, setLike] = useState(false);
     const like = false;
+    const orders = [
+        {id:1, title:'언어 실력', body:'저는 토미입니다.'},
+        {id:2, title:'본인 소개', body:'저는 토미입니다.'},
+        {id:3, title:'관련 해시태그', body:'저는 토미입니다.'},
+        {id:4, title:'이런 장소가 좋아요.', body:'저는 토미입니다.'},
+        {id:5, title:'이런 장소는 고민돼요.', body:'저는 토미입니다.'},
+    ]
     document.body.style = 'background: #1C3BD5;';
     return (
         <>
@@ -54,7 +82,8 @@ function detailProfile() {
                     <span>침산동</span>
                 </div>
                 <div>
-                    <div className='orderBox'>
+                    <OrderBox orders={orders}></OrderBox>
+                    {/* <div className='orderBox'>
                         <div className='orderTitle'>
                             <img
                                 src='/assets/img/profile_order.png'
@@ -108,7 +137,7 @@ function detailProfile() {
                         <div className='orderDes'>
                             <span>저는 토미입니다저는 토미입니다저는 토미입니다저는 토미입니다저는 토미입니다저는 토미입니다</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
